@@ -1,10 +1,5 @@
 
-function carregarPagina(pagina) {
-  if(pagina == "carrinho.html"){
-    $('#footer').addClass("d-none")
-  } else {
-    $('#footer').removeClass("d-none")
-  }
+function carregarPagina(pagina) { 
   $("#carregaPaginas").load(pagina);
 }
 
