@@ -29,22 +29,19 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav ms-auto" id="categoria">
             <li class="nav-item">
-              <a class="top nav-link" onclick="carregarPagina('./Index.html')" style="color: white">Quem somos nós</a>
+              <a class="top nav-link" onclick="carregarPagina('./Index.html')" style="color: white; cursor: pointer;">Quem somos nós</a>
             </li>
             <li class="nav-item">
-              <a class="top nav-link" onclick="carregarPagina('./produto.html')" style="color: white">Nossos Produtos</a>
+              <a class="top nav-link" onclick="carregarPagina('./produto.html')" style="color: white; cursor: pointer;">Nossos Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="top nav-link" onclick="carregarPagina('./sobre.html')" style="color: white">Curiosidades</a>
+              <a class="top nav-link" onclick="carregarPagina('./sobre.html')" style="color: white; cursor: pointer;">Curiosidades</a>
             </li>
-            <!-- <li class="nav-item">
-
-              <a class="top nav-link" onclick="carregarPagina('./carrinho.html')" style="color: white"><i>carrinho</i></a>
-            </li> -->
+           
 
             <li class="nav-item position-relative">
-              <div id="carrinhoTot" class="border p-1 position-absolute"></div>
-              <a class="top nav-link"  onclick="carregarPagina('./carrinho.html')" style="color: white"
+              <div id="carrinhoTot" class="border p-1 position-absolute d-none"></div>
+              <a class="top nav-link"  onclick="carregarPagina('./carrinho.html')" style="color: white; cursor: pointer;"
                 ><i
                   ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                     <path
@@ -143,7 +140,7 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="index.js"></script>
     <script src="carrinhoDeCompra.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

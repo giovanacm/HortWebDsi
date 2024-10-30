@@ -1,20 +1,20 @@
 function addCarrinho(element) {
-  // Obter informações do produto usando os data-attributes
+  
   const productId = $(element).data("id");
   const productName = $(element).data("nome");
   const productPrice = parseFloat($(element).data("preco"));
 
-  // Verificar se o carrinho existe no localStorage
+ 
   let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-  // Verificar se o produto já está no carrinho
+ 
   const existingProduct = cart.find((item) => item.id === productId);
 
   if (existingProduct) {
-    // Se o produto já existe, incrementa a quantidade
+   
     existingProduct.quantidade += 1;
   } else {
-    // Se o produto não existe, adiciona um novo item ao carrinho
+    
     const newProduct = {
       id: productId,
       nome: productName,
@@ -24,20 +24,21 @@ function addCarrinho(element) {
     cart.push(newProduct);
   }
 
-  // Atualizar o localStorage com o carrinho atualizado
+  
   localStorage.setItem("carrinho", JSON.stringify(cart));
 
-  // Mensagem de confirmação
+ 
   alert(`Produto "${productName}" adicionado ao carrinho!`);
+  carregarCarrinho();
 }
 
-// Função para exibir o carrinho (opcional para verificar os itens)
+
 function exibirCarrinho() {
   const cart = JSON.parse(localStorage.getItem("carrinho")) || [];
   console.log("Carrinho:", cart);
 }
 
-// Função para limpar o carrinho (opcional para testes)
+
 function limparCarrinho() {
   localStorage.removeItem("carrinho");
   alert("Carrinho limpo!");
@@ -53,15 +54,22 @@ function carregarCarrinho() {
   let total = 0;
 
   carrinho.forEach((produto) => {
-    cont++;
-    // Calcula o preço total do produto pela quantidade
+    cont++; 
+   
     const precoTotalProduto = produto.preco * produto.quantidade;
     total += precoTotalProduto;
 
-    // Atualiza o total de itens no carrinho
-    $('#carrinhoTot').html(cont);
+   
+    if (cont>0){
+      $('#carrinhoTot').removeClass("d-none")
 
-    // Cria o elemento de produto no carrinho
+      $('#carrinhoTot').html(cont);
+    }else {
+      $('#carrinhoTot').addClass("d-none")
+
+    }
+
+    
     const produtoDiv = $(`
       <div class="produto">
         <div class="produto-info col-6">
@@ -80,15 +88,16 @@ function carregarCarrinho() {
       </div>
     `);
     carrinhoLista.append(produtoDiv);
+    
   });
 
-  // Exibe o total atualizado
+  
   totalPreco.text(`Total: R$ ${total.toFixed(2)}`);
 }
 
 function alterarQuantidade(produtoId, quantidade) {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  const produto = carrinho.find((item) => item.id === produtoId);
+  const produto = carrinho.find(item => item.id == produtoId);
 
   if (produto) {
     produto.quantidade += quantidade;
@@ -108,13 +117,13 @@ function removerProduto(produtoId) {
   const res = confirm("Remover produto do Carrinho?");
   if (res) {
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    carrinho = carrinho.filter((item) => item.id !== produtoId);
+    carrinho = carrinho.filter((item) => item.id != produtoId);
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
     carregarCarrinho();
   }
 }
 
-// Carrega o carrinho ao abrir a página
+
 $(document).ready(function() {
   carregarCarrinho();
 });
