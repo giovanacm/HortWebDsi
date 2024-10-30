@@ -152,15 +152,18 @@ hr {
     line-height: 2.5em;
 }
 
-.boxhort img{
-    height: 250px; object-fit: cover
+.boxhort img {
+    height: 250px;
+    object-fit: cover
 }
+
 @media (max-width: 1200px) {
 
-    .legumes img{
+    .legumes img {
         object-fit: contain !important;
     }
-    .boxhort img{
+
+    .boxhort img {
         aspect-ratio: 1/.5 !important;
     }
 }
@@ -225,49 +228,53 @@ hr {
     }
 }
 
-.carrinho-container {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  .produto {
+
+.produto {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
     border-bottom: 1px solid #ddd;
-  }
-  .produto-info {
+}
+
+.produto-info {
     display: flex;
     flex-direction: column;
-  }
-  .produto-nome {
+}
+
+.produto-nome {
     font-size: 18px;
     font-weight: bold;
-  }
-  .produto-preco {
+}
+
+.produto-preco {
     color: #666;
-  }
-  .produto-quantidade {
+}
+
+.produto-quantidade {
     display: flex;
     align-items: center;
-  }
-  .quantidade-btn {
+}
+
+.quantidade-btn {
     padding: 5px;
     cursor: pointer;
     font-weight: bold;
-  }
-  .quantidade-input {
+}
+
+.quantidade-input {
     width: 40px;
     text-align: center;
-  }
-  .total {
+}
+
+.total {
     text-align: right;
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
-  }
+}
 
-  #carrinhoTot {
+#carrinhoTot {
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -276,4 +283,37 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
+
+:root {
+    --tamnhoBotaoCompra: 50%;
+}
+
+.finalizarCompra {
+    text-align: center;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: red;
+    position: absolute;
+    left: calc(75% - var(--tamnhoBotaoCompra)) !important;
+    width: var(--tamnhoBotaoCompra) !important;
+}
+
+.carrinho-container {
+    max-width: 90%;
+    margin: 0 auto;
+    height: 90vh;
+    padding-bottom: 200px;
+
+}
+
+.carrinho-container .total{
+    position: absolute;
+    bottom: 80px;
+    right:50px;
+}
+
+.clicar{
+    cursor: pointer;
+}

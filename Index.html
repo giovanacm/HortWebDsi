@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/styles.css" />
-    <link rel="stylesheet" href="./CSS/bootstrap.css" />
-    <link rel="stylesheet" href="./CSS/btn.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="./CSS/btn.css" />
+    <link rel="stylesheet" href="./CSS/bootstrap.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
     <title>Hortifruti</title>
   </head>
 
@@ -28,20 +28,19 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav ms-auto" id="categoria">
-            <li class="nav-item">
-              <a class="top nav-link" onclick="carregarPagina('./Index.html')" style="color: white; cursor: pointer;">Quem somos nós</a>
+            <li class="nav-item clicar">
+              <a class="top nav-link " onclick="carregarPagina('./Index.html')" style="color: white; cursor: pointer">Quem somos nós</a>
             </li>
-            <li class="nav-item">
-              <a class="top nav-link" onclick="carregarPagina('./produto.html')" style="color: white; cursor: pointer;">Nossos Produtos</a>
+            <li class="nav-item clicar">
+              <a class="top nav-link" onclick="carregarPagina('./produto.html')" style="color: white; cursor: pointer">Nossos Produtos</a>
             </li>
-            <li class="nav-item">
-              <a class="top nav-link" onclick="carregarPagina('./sobre.html')" style="color: white; cursor: pointer;">Curiosidades</a>
+            <li class="nav-item clicar">
+              <a class="top nav-link" onclick="carregarPagina('./sobre.html')" style="color: white; cursor: pointer">Curiosidades</a>
             </li>
-           
 
-            <li class="nav-item position-relative">
+            <li class="nav-item clicar position-relative">
               <div id="carrinhoTot" class="border p-1 position-absolute d-none"></div>
-              <a class="top nav-link"  onclick="carregarPagina('./carrinho.html')" style="color: white; cursor: pointer;"
+              <a class="top nav-link" onclick="carregarPagina('./carrinho.html')" style="color: white; cursor: pointer"
                 ><i
                   ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                     <path
@@ -56,8 +55,8 @@
 
     <div id="carregaPaginas"></div>
 
-    <footer class="container bg-white p-0" id="footer">
-      <div class="m-0 row d-flex justify-content-center container" style="background-color: white; font-size: 0.8em; line-height: 1.8em">
+    <footer class="container p-0" id="footer" style="background-color: transparent !important;">
+      <div class="m-0 row d-flex justify-content-center container" style="font-size: 0.8em; line-height: 1.8em">
         <div class="col-lg-4 col-12 p-1">
           <div class="card-body border rounded-3 d-flex justify-content-between" style="padding: 20px; min-height: 280px; flex-direction: column">
             <h5 class="card-title" style="font-size: 1.1em; text-align: center">Endereço</h5>
